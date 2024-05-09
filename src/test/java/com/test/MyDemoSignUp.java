@@ -16,7 +16,8 @@ public class MyDemoSignUp {
 
     private AndroidDriver driver;
     private WebDriverWait wait;
-    private By menuBtn = accessibilityId("open menu");
+    //private By menuBtn = accessibilityId("open menu");
+    private By menuBtn = androidUIAutomator("new UiSelector().description(\"open menu\")");
     private By loginMenu = accessibilityId("menu item log in");
     private By userInput = accessibilityId("Username input field");
     private By passInput = accessibilityId("Password input field");
