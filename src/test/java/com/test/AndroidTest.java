@@ -7,8 +7,9 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -86,7 +87,7 @@ class AndroidTest {
         Thread.sleep(500);
         String titulo = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Products\"]")).getText();
         driver.quit();
-        Assertions.assertEquals("Products", titulo);
+        Assert.assertEquals(titulo, "Products");
 
         Thread.sleep(4000);
 
