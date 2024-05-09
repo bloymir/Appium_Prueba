@@ -18,12 +18,12 @@ public class MyDemoSignUp {
     private WebDriverWait wait;
     //private By menuBtn = accessibilityId("open menu");
     private By menuBtn = androidUIAutomator("new UiSelector().description(\"open menu\")");
-    private By loginMenu = accessibilityId("menu item log in");
+    private By loginMenu = androidUIAutomator("new UiSelector().description(\"menu item log in\")");
     private By userInput = accessibilityId("Username input field");
     private By passInput = accessibilityId("Password input field");
     private By loginBtn = accessibilityId("Login button");
-    private By titleText = AppiumBy.xpath("//android.widget.TextView[@text=\"Products\"]");
-    private By msjErrorOutput = AppiumBy.xpath("//android.widget.TextView[@text=\"Provided credentials do not match any user in this service.\"]");
+    private By titleText = androidUIAutomator("new UiSelector().text(\"Products\")");
+    private By msjErrorOutput = androidUIAutomator("generic-error-message");
 
     public MyDemoSignUp(final AndroidDriver driver){
         this.driver = driver;
