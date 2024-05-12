@@ -23,7 +23,7 @@ public class MyDemoSignUp {
     private By passInput = accessibilityId("Password input field");
     private By loginBtn = accessibilityId("Login button");
     private By titleText = androidUIAutomator("new UiSelector().text(\"Products\")");
-    private By msjErrorOutput = androidUIAutomator("generic-error-message");
+    private By msjErrorOutput = androidUIAutomator("new UiSelector().text(\"Provided credentials do not match any user in this service.\")");
 
     public MyDemoSignUp(final AndroidDriver driver){
         this.driver = driver;
