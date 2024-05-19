@@ -45,7 +45,10 @@ public class MyDemoTest {
         Assert.assertEquals(myDemo.loginError(userName, passFail), mensajeError);
 
     }
-    public UiAutomator2Options getOptionsMyDemoApp(){
+
+
+
+    private UiAutomator2Options getOptionsMyDemoApp(){
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("emulator-5554")
                 .setPlatformVersion("12.0")

@@ -3,8 +3,10 @@ package com.test;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import w3c.FingerGestureUtils;
 
 import java.time.Duration;
 
@@ -27,8 +29,9 @@ public class MyDemoSignUp {
 
     public MyDemoSignUp(final AndroidDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, ofSeconds(10));
+        this.wait = new WebDriverWait(driver, ofSeconds(10));;
     }
+
 
     private void pasosLogin(String userName, String password){
         this.wait.until(elementToBeClickable(menuBtn)).click();
@@ -47,4 +50,7 @@ public class MyDemoSignUp {
         String mensaje = this.wait.until(visibilityOfElementLocated(msjErrorOutput)).getText();
         return mensaje;
     }
+
+
+
 }
