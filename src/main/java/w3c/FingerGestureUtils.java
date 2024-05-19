@@ -10,6 +10,7 @@ import io.appium.java_client.AppiumDriver;
 
 import java.time.Duration;
 
+import static java.lang.String.format;
 import static java.util.Collections.singletonList;
 
 
@@ -27,6 +28,20 @@ public class FingerGestureUtils {
         final var start = getElementCenter(element);
         final var sequence = singleFingerSwipe(FINGER_1, 0, start, null);
         this.driver.perform (singletonList(sequence));
+    }
+    public void dragTo(final WebElement source, final WebElement target){
+        final var start = getElementCenter(source);
+        final var end = getElementCenter(target);
+        System.out.println("Moviendo...");
+        printPoint("Start ", start);
+        printPoint("End ", end);
+
+        final var sequence = singleFingerSwipe(FINGER_1, 0, start, end);
+        this.driver.perform(singletonList(sequence));
+    }
+
+    private void printPoint (final String type, final Point point) {
+        System.out.println (format ("{0}: [x: {1}, y: {2}]", type, point.getX (), point.getY ()));
     }
     private Point getElementCenter(final WebElement element){
         final var location = element.getLocation();
